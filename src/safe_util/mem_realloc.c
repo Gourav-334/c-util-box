@@ -1,6 +1,6 @@
 /* Including headers */
 
-#include "../../include/safe_util/mem_alloc.h"
+#include "../../include/safe_util/mem_realloc.h"
 
 #include <stdio.h>      // Standard error buffer management
 #include <stdlib.h>     // To use memory management functions
@@ -16,13 +16,13 @@
 
 /* Memory allocation function */
 
-bool alloc_mem(safe_manage *manager, long allocate, int blocks)
+bool realloc_mem(safe_manage *manager, long allocate, int blocks)
 {
     /* Checking if requested allocation and blocks are logical. */
 
     if (allocate<=0)
     {
-        fprintf(stderr, "SEMI-NEGATIVE ALLOCATION: Requested size of allocation must be positive!\n");
+        fprintf(stderr, "SEMI-NEGATIVE ALLOCATION: Requested size of reallocation must be positive!\n");
         
         return false;
     }
@@ -60,7 +60,7 @@ bool alloc_mem(safe_manage *manager, long allocate, int blocks)
 
     if (manager->allocated==0)
     {
-        if (manager->ptr = malloc(blocks*(size_t)allocate))
+        if (manager -> ptr = realloc(manager->ptr, blocks*(size_t)allocate))
         {
             manager->allocated = blocks*allocate;
 
@@ -68,16 +68,10 @@ bool alloc_mem(safe_manage *manager, long allocate, int blocks)
         }
         else
         {
-            fprintf(stderr, "ALLOCATION FAILURE: Memory allocation failed for unknown reason.");
+            fprintf(stderr, "ALLOCATION FAILURE: Memory reallocation failed for unknown reason.");
 
             return false;
         }
-    }
-    else if (manager->allocated>0)
-    {
-        fprintf(stderr, "DOUBLE ALLOCATION: Memory already allocated at %p!\n", manager->ptr);
-
-        return false;
     }
     else if (manager->allocated<0)
     {

@@ -24,9 +24,8 @@
 ## 3. Involved Header Files
 
 - **`safe_manage.h`** - Header file containing structure which manages safety and contains all required metadata.
-- **`safe_manage_init.h`** - Header file declaring function responsible for initializing safety manager.
 - **`mem_alloc.h`** - Header file declaring function responsible for allocating memory.
-- **`mem_alloc_mod.h`** - Header file declaring function responsible for modifying allocated memory.
+- **`mem_realloc.h`** - Header file declaring function responsible for modifying allocated memory.
 - **`mem_rel.h`** - Header file declaring function responsible for releasing memory.
 - **`mem_setter.h`** - Header file declaring function responsible for writing memory.
 - **`mem_writer.h`** - Header file declaring function responsible for writing memory.
@@ -35,9 +34,8 @@
 
 ## 4. Involved Source Files
 
-- **`safe_manage_init.c`** - Source file declaring function responsible for initializing safety manager.
 - **`mem_alloc.c`** - Source file declaring function responsible for allocating memory.
-- **`mem_alloc_mod.c`** - Source file declaring function responsible for modifying allocated memory.
+- **`mem_realloc.c`** - Source file declaring function responsible for modifying allocated memory.
 - **`mem_rel.c`** - Source file declaring function responsible for releasing memory.
 - **`mem_setter.c`** - Source file declaring function responsible for writing memory.
 - **`mem_writer.c`** - Source file declaring function responsible for writing memory.

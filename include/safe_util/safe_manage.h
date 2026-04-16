@@ -24,7 +24,7 @@
 
 typedef struct safe_manage {
     void *ptr;
-    size_t allocated;
+    long allocated;
 } safe_manage;
 
 

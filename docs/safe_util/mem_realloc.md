@@ -1,11 +1,11 @@
-# MEMORY ALLOCATOR
+# MEMORY REALLOCATOR
 
 
 
 ## 1. About
 
 
-Function that allocates memory coordinating with safety manager structure.
+Memory allocation modifier modifies the total memory occupied, by re-allocating on the same space.
 
 
 
@@ -13,12 +13,12 @@ Function that allocates memory coordinating with safety manager structure.
 
 
 ```c
-bool alloc_mem(safe_manage manager, long allocate, int blocks);
+void mem_realloc(safe_manage *manager, long int allocate, int blocks);
 ```
 
-- `manager` - Particular pointer safety manager
-- `allocate` - Size to allocate for the memory
-- `blocks` - Number of blocks to allocate
+- `manager` - The target safety manager containing pointer.
+- `allocate` - Memory to reallocate
+- `blocks` - Number of blocks to reallocate
 
 
 
@@ -28,7 +28,7 @@ bool alloc_mem(safe_manage manager, long allocate, int blocks);
 1. Check if asked size & number of blocks are positive.
 2. Run sanity check for allocated memory and pointer value.
 3. Check if the pointer is currently holding memory.
-4. If yes, deny operation with the reason.
+4. If yes, reallocate memory as requested.
 5. Else if not allocate the requested size of memory, and number of blocks.
 6. If it fails, tell users the same.
 

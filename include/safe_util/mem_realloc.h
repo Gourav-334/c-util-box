@@ -1,7 +1,7 @@
 /* Macro guards to avoid multiple inclusions. */
 
-#ifndef MEM_ALLOC_H
-    #define MEM_ALLOC_H
+#ifndef MEM_REALLOC_H
+    #define MEM_REALLOC_H
 
 
 
@@ -25,7 +25,7 @@
 
 /* Memory allocation function */
 
-bool alloc_mem(safe_manage *manager, long allocate, int blocks);
+bool realloc_mem(safe_manage *manager, long allocate, int blocks);
 
 
 

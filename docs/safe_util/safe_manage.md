@@ -43,7 +43,7 @@ A `struct` that contains various fields to provide safety for memory-related ope
 ```c
 typedef struct safe_manage {
     void *ptr;
-    size_t allocated;
+    long allocated;
 } safe_manage;
 ```
 
