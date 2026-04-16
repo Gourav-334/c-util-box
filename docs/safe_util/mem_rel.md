@@ -1,11 +1,11 @@
-# MEMORY REALLOCATOR
+# MEMORY RELEASER
 
 
 
 ## 1. About
 
 
-Memory allocation modifier modifies the total memory occupied, by re-allocating on the same space.
+Memory releaser is used for releasing/freeing memory which is pointed and occupied.
 
 
 
@@ -13,24 +13,21 @@ Memory allocation modifier modifies the total memory occupied, by re-allocating 
 
 
 ```c
-void mem_realloc(safe_manage *manager, long int allocate, int blocks);
+void mem_rel(safe_manage *manager);
 ```
 
 - `manager` - The target safety manager containing pointer.
-- `allocate` - Memory to reallocate
-- `blocks` - Number of blocks to reallocate
 
 
 
 ## 3. Algorithm
 
 
-1. Check if asked size & number of blocks are positive.
-2. Run sanity check for allocated memory and pointer value.
-3. Check if the pointer is currently holding memory.
-4. If yes, reallocate memory as requested.
-5. Else if not allocate the requested size of memory, and number of blocks.
-6. If it fails, tell users the same.
+1. Run sanity check for allocated memory and pointer value.
+2. Check if the pointer is pointing to any memory.
+3. If yes, free the memory.
+4. Else if not, warn user about double free attempt.
+5. If it fails, tell users the same.
 
 
 
@@ -39,20 +36,14 @@ void mem_realloc(safe_manage *manager, long int allocate, int blocks);
 
 ### 4.1 <u>Normal Conditions</u>:
 
-- Requested allocation: `>0`
-- Requested number of blocks: `>=1`
-- Safety manager pointer: `NULL` & allocated memory: `0`
 - Safety manager pointer: `!NULL` & allocated memory: `>0`
-- Allocated memory: `>=0`
 
 
 ### 4.2 <u>Test Cases</u>:
 
-1. All normal conditions.
-2. Requested allocation: `<=0`
-3. Requested number of blocks: `<1`
-4. Safety manager pointer: `NULL` & allocated memory: `>0`
-5. Safety manager pointer: `!NULL` & allocated memory: `0`
-6. Allocated memory: `<0`
+1. Safety manager pointer: `NULL` & allocated memory: `>0`
+2. Safety manager pointer: `!NULL` & allocated memory: `0`
+3. Allocated memory: `<0`
+4. All normal conditions.
 
 ---

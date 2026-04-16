@@ -1,7 +1,7 @@
 /* Macro guards to avoid multiple inclusions. */
 
-#ifndef MEM_REALLOC_H
-    #define MEM_REALLOC_H
+#ifndef MEM_REL_H
+    #define MEM_REL_H
 
 
 
@@ -11,7 +11,6 @@
 
 #include "safe_manage.h"    // Safety management structure
 
-#include <stddef.h>         // For using 'size_t'
 #include <stdbool.h>        // For using boolean types
 
 
@@ -23,9 +22,9 @@
 
 
 
-/* Memory allocation function */
+/* Memory releasing function */
 
-bool realloc_mem(safe_manage *manager, long allocate, int blocks);
+bool rel_mem(safe_manage *manager);
 
 
 

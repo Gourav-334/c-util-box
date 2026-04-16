@@ -8,4 +8,4 @@ gcc -c main.c -o ../obj/safe_util/main.o
 
 # Combining objects into single binary.
 
-gcc -o main ../obj/safe_util/main.o ../obj/safe_util/mem_realloc.o ../obj/safe_util/mem_alloc.o ../obj/safe_util/mem_rel.o
+gcc -o main ../obj/safe_util/main.o ../obj/safe_util/mem_alloc.o ../obj/safe_util/mem_realloc.o ../obj/safe_util/mem_rel.o

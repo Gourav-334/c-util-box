@@ -11,7 +11,6 @@
 
 #include "safe_manage.h"    // Safety management structure
 
-#include <stddef.h>         // For using 'size_t'
 #include <stdbool.h>        // For using boolean types
 
 
@@ -23,7 +22,7 @@
 
 
 
-/* Memory allocation function */
+/* Memory reallocation function */
 
 bool realloc_mem(safe_manage *manager, long allocate, int blocks);
 
