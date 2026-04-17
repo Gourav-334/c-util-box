@@ -13,7 +13,7 @@ Memory writer is used for writing values to memory
 
 
 ```c
-void write_mem(safe_manage *manager, long value, long index, size_t size);
+bool write_mem(safe_manage *manager, long value, long index, size_t size);
 ```
 
 - `manager` - The target safety manager containing pointer.
@@ -28,8 +28,8 @@ void write_mem(safe_manage *manager, long value, long index, size_t size);
 
 1. Run sanity check for allocated memory and pointer value.
 2. Check if the pointer is pointing to any memory.
-3. If yes, check the intended data type and assign a variable similarly.
-4. Then write the memory with requested byte value.
+3. If yes, for overflow attack through access too far.
+4. Then write the memory with requested byte value if everything is fine, as per data type.
 4. Else if not, tell user that no memory is being pointed.
 
 
@@ -46,7 +46,8 @@ void write_mem(safe_manage *manager, long value, long index, size_t size);
 
 1. Safety manager pointer: `NULL` & allocated memory: `>0`
 2. Safety manager pointer: `!NULL` & allocated memory: `0`
-3. Allocated memory: `<0`
-4. All normal conditions.
+3. Overflow attack
+4. Allocated memory: `<0`
+5. All normal conditions.
 
 ---

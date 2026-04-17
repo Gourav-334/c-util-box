@@ -29,7 +29,6 @@
 - **`mem_rel.h`** - Header file declaring function responsible for releasing memory.
 - **`mem_set.h`** - Header file declaring function responsible for writing memory.
 - **`mem_write.h`** - Header file declaring function responsible for writing memory.
-- **`cont_mem_write.h`** - Header file declaring function responsible for contagiously writing memory.
 
 
 ## 4. Involved Source Files
@@ -39,6 +38,5 @@
 - **`mem_rel.c`** - Source file declaring function responsible for releasing memory.
 - **`mem_set.c`** - Source file declaring function responsible for writing memory.
 - **`mem_write.c`** - Source file declaring function responsible for writing memory.
-- **`cont_mem_write.c`** - Source file declaring function responsible for contagiously writing memory.
 
 ---

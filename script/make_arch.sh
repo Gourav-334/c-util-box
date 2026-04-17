@@ -1,0 +1,1 @@
+ar rcs ../lib/libsafe_util.a ../obj/safe_util/mem_alloc.o ../obj/safe_util/mem_realloc.o ../obj/safe_util/mem_rel.o ../obj/safe_util/mem_set.o ../obj/safe_util/mem_write.o

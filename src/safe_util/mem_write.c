@@ -1,6 +1,6 @@
 /* Including headers */
 
-#include "../../include/safe_util/mem_rel.h"
+#include "../../include/safe_util/mem_write.h"
 
 #include <stdio.h>      // Standard error buffer management
 #include <string.h>     // To use memset()
@@ -16,7 +16,7 @@
 
 /* Memory reallocation function */
 
-bool set_mem(safe_manage *manager, int value)
+bool write_mem(safe_manage *manager, long value, long index, size_t size)
 {
     /* Sanity check about current member values. */
 
@@ -41,12 +41,28 @@ bool set_mem(safe_manage *manager, int value)
 
     if (manager->allocated>0)
     {
-        memset(manager->ptr, value, manager->allocated);
+        if (index*size>=manager->allocated)
+        {
+            fprintf(stderr, "BUFFER OVERFLOW: Occupied memory is %ld bytes long, but request reaches %ld bytes!\n", manager->allocated, index*size);
+
+            return false;
+        }
+        else if (index*size<manager->allocated)
+        {
+            switch (size)
+            {
+                case CHARACTER: *((char*)(manager->ptr + index)) = value; break;
+                case SHORT: *((short*)(manager->ptr + index)) = value; break;
+                case INTEGER: *((int*)(manager->ptr + index)) = value; break;
+                case LONG: *((long*)(manager->ptr + index)) = value; break;
+            }
+        }
+
         return true;
     }
     else if (manager->allocated==0)
     {
-        fprintf(stderr, "NO OCCUPATION: Memory is requested to be set, but not being occupied yet!\n");
+        fprintf(stderr, "NO OCCUPATION: Memory is requested to be written on, but not being occupied yet!\n");
 
         return false;
     }

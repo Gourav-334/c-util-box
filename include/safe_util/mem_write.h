@@ -1,7 +1,16 @@
 /* Macro guards to avoid multiple inclusions. */
 
-#ifndef MEM_SET_H
-    #define MEM_SET_H
+#ifndef MEM_WRITE_H
+    #define MEM_WRITE_H
+
+
+
+/* Size macros */
+
+#define CHARACTER 1
+#define SHORT 2
+#define INTEGER 4
+#define LONG 8
 
 
 
@@ -24,7 +33,7 @@
 
 /* Memory setting function */
 
-bool set_mem(safe_manage *manager, int value);
+bool write_mem(safe_manage *manager, long value, long index, size_t size);
 
 
 
