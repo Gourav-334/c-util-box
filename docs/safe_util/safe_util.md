@@ -27,9 +27,9 @@
 - **`mem_alloc.h`** - Header file declaring function responsible for allocating memory.
 - **`mem_realloc.h`** - Header file declaring function responsible for modifying allocated memory.
 - **`mem_rel.h`** - Header file declaring function responsible for releasing memory.
-- **`mem_setter.h`** - Header file declaring function responsible for writing memory.
-- **`mem_writer.h`** - Header file declaring function responsible for writing memory.
-- **`cont_mem_writer.h`** - Header file declaring function responsible for contagiously writing memory.
+- **`mem_set.h`** - Header file declaring function responsible for writing memory.
+- **`mem_write.h`** - Header file declaring function responsible for writing memory.
+- **`cont_mem_write.h`** - Header file declaring function responsible for contagiously writing memory.
 
 
 ## 4. Involved Source Files
@@ -37,8 +37,8 @@
 - **`mem_alloc.c`** - Source file declaring function responsible for allocating memory.
 - **`mem_realloc.c`** - Source file declaring function responsible for modifying allocated memory.
 - **`mem_rel.c`** - Source file declaring function responsible for releasing memory.
-- **`mem_setter.c`** - Source file declaring function responsible for writing memory.
-- **`mem_writer.c`** - Source file declaring function responsible for writing memory.
-- **`cont_mem_writer.c`** - Source file declaring function responsible for contagiously writing memory.
+- **`mem_set.c`** - Source file declaring function responsible for writing memory.
+- **`mem_write.c`** - Source file declaring function responsible for writing memory.
+- **`cont_mem_write.c`** - Source file declaring function responsible for contagiously writing memory.
 
 ---

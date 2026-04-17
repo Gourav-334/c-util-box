@@ -60,7 +60,7 @@ bool alloc_mem(safe_manage *manager, long allocate, int blocks)
 
     if (manager->allocated==0)
     {
-        if (manager->ptr = malloc(blocks*(size_t)allocate))
+        if (manager->ptr = calloc(blocks, (size_t)allocate))
         {
             manager->allocated = blocks*allocate;
 
