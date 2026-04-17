@@ -1,12 +1,13 @@
-#include "../include/safe_util/mem_realloc.h"
-#include "../include/safe_util/mem_write.h"
+#include "../include/safe_util/safe_util.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 
 
 int main(int argc, char *argv[])
 {
-    safe_manage manager = {.ptr=NULL, .allocated=0};
+    int *ptr = realloc(ptr, sizeof(int));
 
     
     return 0;
